@@ -1,7 +1,8 @@
 gdax-ohlc-import
 ================
 
-Created by https://github.com/arthurk/gdax-ohlc-import
+**Created by https://github.com/arthurk/gdax-ohlc-import**
+
 
 This is a script that fetches all historical OHLC data from [GDAX](https://www.gdax.com/).
 
@@ -17,7 +18,7 @@ The data has a 1-minute interval and can be used to carry out further in-depth a
 API rate limits are respected (currently the limit is 3 req/s, the script will do 1 req/s). It will also re-try fetching and continue to the next symbol after 3 failed attempts.
 
 Starting Dates
---------------
+==============
 
     # Bitcoin
     BTC-EUR: 2015-04-23 | BTC-USD: 2015-01-08 | BTC-GBP: 2015-04-21
