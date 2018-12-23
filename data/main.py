@@ -9,7 +9,7 @@ import requests
 
 logger = logging.getLogger()
 
-API_URL = 'https://api.gdax.com'
+API_URL = 'https://api.pro.coinbase.com'
 
 # "product-id": "trading start day"
 # the api doesn't expose the starting dates
