@@ -9,9 +9,6 @@ The data has a 1-minute interval and can be used to carry out further in-depth a
 
 - [gdax-ohlc-import](#gdax-ohlc-import)
   * [Starting Dates](#starting-dates)
-- [Installation](#installation)
-  * [virtualenv (pipenv)](#virtualenv--pipenv-)
-  * [Docker](#docker)
 - [Usage](#usage)
 - [Data Format](#data-format)
   * [Export to CSV](#export-to-csv)
@@ -34,25 +31,10 @@ Starting Dates
     # Bitcoin Cash
     BCH-BTC: 2018-01-17 | BCH-USD: 2017-12-20 | BCH-EUR: 2018-01-24
 
-Installation
-============
-
-virtualenv (pipenv)
--------------------
-
-The script has been tested with Python 3.5 and 3.6.
-
-You need the `sqlite3` library installed on your system. On macOS you can use homebrew: `brew install sqlite3`.
-
-To install the development environment, clone the repo and run:
-
-    $ pipenv install
-
-
 Usage
 =====
 
-    ➤ pipenv run python main.py --help
+    ➤ python3 main.py --help
     usage: main.py [-h] [-l LOGLEVEL] [-s START_DATE] [-p PRODUCT] db_file
 
     GDAX Fetcher
@@ -71,11 +53,7 @@ Usage
 
 You can run the script with the following command:
 
-    $ pipenv run python main.py db.sqlite3
-
-Or if you prefer Docker:
-
-    $ docker run --rm -v $(pwd)/data:/data python main.py /data/db.sqlite3
+    $ python3 main.py db.sqlite3
 
 This will start fetching data into the `db.sqlite3` file. If it's the first run it will start from the earliest trading day. You can abort the script at any time and it will resume fetching from the last saved state.
 
@@ -88,7 +66,7 @@ This will start fetching data into the `db.sqlite3` file. If it's the first run 
 
 If you don't want to fetch all history for every product you can use the `--start-date` and `--product` flags. For example this will fetch the OHLC data for ETH-USD starting from March 2018:
 
-    $ pipenv run python main.py -p ETH-USD -s 2018-03-01 debug_db.sqlite3
+    $ python3 main.py -p ETH-USD -s 2018-03-01 debug_db.sqlite3
 
     2018-05-06 20:45:00,656 INFO     Updating ['ETH-USD']
     2018-05-06 20:45:00,660 INFO     1/1 | ETH-USD | starting from 2018-03-01 00:00:00
