@@ -3,39 +3,45 @@ import sqlite3
 import pandas as pd
 import math
 import matplotlib.pyplot as plt
+import matplotlib.ticker as pltick
 
 # Create a connection instance
-myConnection = sqlite3.connect(os.path.realpath('../../data/db.sqlite3'))
+conn = sqlite3.connect(os.path.realpath('../../data/db.sqlite3'))
+cursor = conn.cursor()
 
-# create a Cursor object
-myCursor = myConnection.cursor()
-
-# Store the query as string
-myQuery = """
+query = """
         SELECT * , datetime(time, 'unixepoch', 'localtime') as date
         FROM candles
-        WHERE (market, CAST(high as FLOAT)) IN
-            (SELECT distinct market, MAX(CAST(high as FLOAT))
+        WHERE (market, time) IN
+            (SELECT market, MIN(time)
             FROM candles
+            WHERE (market, CAST(high as FLOAT)) IN
+                (SELECT market, MAX(CAST(high as FLOAT))
+                FROM candles
+                GROUP BY market)
             GROUP BY market)
         """
 
-# Query the dataset
-myCursor.execute(myQuery)
-
-# Fetch the results
-results = myCursor.execute(myQuery).fetchall()
+results = cursor.execute(query).fetchall()
 print(results)
+conn.close()
 
-# Close the connection
-myConnection.close()
+# Format the y-axis values as prices
+fmt = '${x:,.0f}'
+tick = pltick.StrMethodFormatter(fmt)
 
-# Play around with the imported Query results
+# Use the query results to structure the data
 x_labels = [x[0] for x in results]
-y_val = [float(x[3]) for x in results]
-x_val = range(0,len(y_val))
-plt.bar(x_val, y_val, color=['blue'])
-plt.title('Peak Prices of Cryptocurrency')
+raw_x_val = [float(x[3]) for x in results]
+x_val = range(0,len(raw_x_val))
+y_val = raw_x_val
+
+# Plot the data
+plt.axes().yaxis.set_major_formatter(pltick.StrMethodFormatter(fmt))
+plt.bar(x_val, y_val, color=['red'])
+plt.title('Peak Prices of Cryptocurrency on Coinbase', fontweight='bold')
+plt.xlabel ('Coins', fontweight='bold')
 plt.xticks(x_val, x_labels)
 plt.yticks(y_val)
+plt.savefig('peaks.png')
 plt.show()
