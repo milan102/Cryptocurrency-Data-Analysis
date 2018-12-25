@@ -42,7 +42,7 @@ y_val = raw_x_val
 # Plot the data
 plt.axes().yaxis.set_major_formatter(pltick.StrMethodFormatter(fmt))
 plt.bar(x_val, y_val, color=['red'])
-plt.title('Peak Prices On Coinbase, In U.S. Dollars', fontweight='bold')
+plt.title('Peak Prices On Coinbase Pro, In U.S. Dollars', fontweight='bold')
 plt.xlabel('Cryptocurrency', fontweight='bold')
 plt.xticks(x_val, x_labels)
 plt.yticks(y_val)
