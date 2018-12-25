@@ -41,6 +41,6 @@ LTC-USD | 2017-12-12 06:11:00 | $420.00
 
 
 ## Conclusion
-Hindsight is nice. From back then to the time of this writing (December 2018), prices have been trending downward. Traders would not have been wrong to remain optimistic about cryptocurrency until the 2017 holiday season, and then change to a pessimistic attitude in early 2018. Will the correct strategy change to optimism in 2019?
+Hindsight is nice. From back then to the time of this writing (December 2018), prices have been trending downward. Traders would not have been wrong to remain optimistic about cryptocurrency until the 2017 holiday season, and then change to a pessimistic attitude in early 2018. Will the correct strategy be optimism in 2019?
 
 All code used to perform this analysis is available [here](https://github.com/milan102/Cryptocurrency-Data-Analysis).
