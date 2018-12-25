@@ -10,7 +10,7 @@ conn = sqlite3.connect(os.path.realpath('../../data/db.sqlite3'))
 cursor = conn.cursor()
 
 query = """
-        SELECT * , datetime(time, 'unixepoch', 'localtime') as date
+        SELECT *, datetime(time, 'unixepoch', 'localtime') as date
         FROM candles
         WHERE (market, time) IN
             (SELECT market, MIN(time)
