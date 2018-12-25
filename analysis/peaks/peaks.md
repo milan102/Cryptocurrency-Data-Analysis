@@ -22,7 +22,7 @@ SELECT *, datetime(time, 'unixepoch', 'localtime') as date
 ```
 
 market | date (PST) | high
-- | - | -
+------ | ---------- | ----
 BTC-USD | 2017-12-17 04:36:00 | $19,891.99
 ETH-USD | 2018-01-13 13:03:00 | $1,419.96
 LTC-USD | 2017-12-12 06:11:00 | $420.00
@@ -37,7 +37,7 @@ LTC-USD | 2017-12-12 06:11:00 | $420.00
 
  - Bitcoin's and Litecoin's peaks occurred in the early morning (relative to the PST timezone), *4:36 AM* and *6:11 AM*, respectively. For Ethereum, this was in the afternoon, *1:03 PM*.
 
- - Litecoin's peak price is an integer, *$420*. [Was Elon Musk considering taking it private?](https://twitter.com/elonmusk/status/1026872652290379776)
+ - Litecoin's peak price is an integer, precisely *$420*. [Was Elon Musk considering taking it private?](https://twitter.com/elonmusk/status/1026872652290379776)
 
 
 ## Conclusion
