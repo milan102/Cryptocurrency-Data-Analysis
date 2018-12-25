@@ -27,7 +27,7 @@ BTC-USD | 2017-12-17 04:36:00 | $19,891.99
 ETH-USD | 2018-01-13 13:03:00 | $1,419.96
 LTC-USD | 2017-12-12 06:11:00 | $420.00
 
-![Peak cryptocurrency prices on Coinbase Pro](peaks.png)
+![Peak cryptocurrency prices on Coinbase Pro](https://github.com/milan102/Cryptocurrency-Data-Analysis/blob/master/analysis/peaks/peaks.png)
 
 
 ## Analysis
