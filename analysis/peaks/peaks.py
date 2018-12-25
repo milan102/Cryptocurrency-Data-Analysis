@@ -26,12 +26,15 @@ results = cursor.execute(query).fetchall()
 print(results)
 conn.close()
 
-# Format the y-axis values as prices
+# Format the y-axis values
 fmt = '${x:,.0f}'
 tick = pltick.StrMethodFormatter(fmt)
 
+# Format the x-axis values
+x_map = {"BTC-USD":"Bitcoin", "ETH-USD":"Ethereum", "LTC-USD":"Litecoin"}
+
 # Use the query results to structure the data
-x_labels = [x[0] for x in results]
+x_labels = [x_map.get(x[0]) for x in results]
 raw_x_val = [float(x[3]) for x in results]
 x_val = range(0,len(raw_x_val))
 y_val = raw_x_val
@@ -39,8 +42,8 @@ y_val = raw_x_val
 # Plot the data
 plt.axes().yaxis.set_major_formatter(pltick.StrMethodFormatter(fmt))
 plt.bar(x_val, y_val, color=['red'])
-plt.title('Peak Prices of Cryptocurrency on Coinbase', fontweight='bold')
-plt.xlabel ('Coins', fontweight='bold')
+plt.title('Peak Prices On Coinbase, In U.S. Dollars', fontweight='bold')
+plt.xlabel('Cryptocurrency', fontweight='bold')
 plt.xticks(x_val, x_labels)
 plt.yticks(y_val)
 plt.savefig('peaks.png')
