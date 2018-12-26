@@ -1,8 +1,15 @@
 gdax-ohlc-import
 ================
 
-**Created by https://github.com/arthurk/gdax-ohlc-import**
+**Initially created by https://github.com/arthurk/gdax-ohlc-import**
 
+Update an existing database by running:
+```python
+python3 update_database.py
+```
+
+Introduction
+============
 
 This is a script that fetches all historical OHLC data from [GDAX](https://www.gdax.com/).
 
