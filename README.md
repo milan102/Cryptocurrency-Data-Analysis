@@ -8,4 +8,4 @@ Data analysis and visualization of Coinbase Pro's (previously GDAX) main coins: 
 
 
 ## Notes
-*Thanks to https://guides.github.com/features/mastering-markdown/ and https://markdowntomedium.com/create for making it easy to publish on https://medium.com/@milanocookie*
+*Thanks to https://guides.github.com/features/mastering-markdown/ and https://markdowntomedium.com/create for making it easy to publish on https://medium.com/@milanocookie and to https://steemit.com/@milanocookie*
