@@ -1,9 +1,9 @@
-import os
-import sqlite3
-import pandas as pd
 import math
 import matplotlib.pyplot as plt
 import matplotlib.ticker as pltick
+import os
+import pandas as pd
+import sqlite3
 
 # Create a connection instance
 conn = sqlite3.connect(os.path.realpath('../../data/db.sqlite3'))
@@ -36,7 +36,7 @@ x_map = {"BTC-USD":"Bitcoin", "ETH-USD":"Ethereum", "LTC-USD":"Litecoin"}
 # Use the query results to structure the data
 x_labels = [x_map.get(x[0]) for x in results]
 raw_x_val = [float(x[3]) for x in results]
-x_val = range(0,len(raw_x_val))
+x_val = range(0, len(raw_x_val))
 y_val = raw_x_val
 
 # Plot the data
