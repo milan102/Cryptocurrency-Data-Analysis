@@ -1,9 +1,10 @@
-import os
-import sqlite3
-import pandas as pd
+import decimal
 import math
 import matplotlib.pyplot as plt
 import matplotlib.ticker as pltick
+import os
+import pandas as pd
+import sqlite3
 
 # Create a connection instance
 conn = sqlite3.connect(os.path.realpath('../../data/db.sqlite3'))
@@ -29,25 +30,32 @@ results = cursor.execute(query).fetchall()
 print(results)
 conn.close()
 
-# Format the y-axis values
-fmt = '${x:,.0f}'
-tick = pltick.StrMethodFormatter(fmt)
+# Format the x-axis labels
+x_map = {'BTC-USD':'Bitcoin', 'ETH-USD':'Ethereum', 'LTC-USD':'Litecoin'}
 
-# Format the x-axis values
-x_map = {"BTC-USD":"Bitcoin", "ETH-USD":"Ethereum", "LTC-USD":"Litecoin"}
+# Format the y-axis labels
+fmt = '${x:,.2f}'
+tick = pltick.StrMethodFormatter(fmt)
 
 # Use the query results to structure the data
 x_labels = [x_map.get(x[0]) for x in results]
-raw_x_val = [float(x[3]) for x in results]
-x_val = range(0,len(raw_x_val))
+raw_x_val = [decimal.Decimal(x[4]) for x in results]
+x_val = range(0, len(raw_x_val))
 y_val = raw_x_val
 
 # Plot the data
 plt.axes().yaxis.set_major_formatter(pltick.StrMethodFormatter(fmt))
-plt.bar(x_val, y_val, color=['blue'])
+plt.axes().yaxis.set_visible(False)
+bar = plt.bar(x_val, y_val, color=['blue'])
 plt.title('Lowest Prices On Coinbase Pro, In U.S. Dollars', fontweight='bold')
 plt.xlabel('Cryptocurrency', fontweight='bold')
 plt.xticks(x_val, x_labels)
-plt.yticks(y_val)
+
+# Place the y-axis value on top of each bar
+for rect in bar:
+    height = rect.get_height()
+    plt.text(rect.get_x() + rect.get_width() / 2.0, height, '$%.2f' % height, ha='center', va='bottom')
+
+# Save and show the figure
 plt.savefig('lows.png')
 plt.show()
