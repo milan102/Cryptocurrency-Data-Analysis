@@ -34,9 +34,9 @@ LTC-USD | 2016-09-01 10:12:00 | $3.26
 ## Analysis
  - Perhaps unsurprisingly, Bitcoin was the first to reach its all-time-low, on *August 24th, 2015*.  Cryptocurrencies generally follow large downward movements of stocks, so this was probably caused by [the global stock market selloff](https://www.cnbc.com/2015/09/25/what-happened-during-the-aug-24-flash-crash.html).
 
- - The *$198.02* U.S. dollar low is ignoring the fact that [a glitch caused the listed price of Bitcoin to drop to 6 cents](https://www.newsbtc.com/2017/04/16/gdax-bitcoin-price-briefly-crashes-us0-06-system-maintenance/)  and that we are ignoring unrealistic numbers for orders on January 14th, 2015, due to the historical API data citing extremely low volume and an overall lack of sufficient information...[however that day was valid for a huge drop in Bitcoin's price](https://www.cnbc.com/2015/01/14/bitcoin-falls-below-200-making-some-investors-worry-about-downward-spiral.html).
+ - The *$198.02* U.S. dollar low is ignoring the fact that [a glitch caused the listed price of Bitcoin to drop to 6 cents](https://www.newsbtc.com/2017/04/16/gdax-bitcoin-price-briefly-crashes-us0-06-system-maintenance/)  and ignoring the unrealistic numbers for orders on January 14th, 2015, due to the historical API data citing extremely low volume and an overall lack of sufficient information...[however that day was valid for a huge drop in Bitcoin's price](https://www.cnbc.com/2015/01/14/bitcoin-falls-below-200-making-some-investors-worry-about-downward-spiral.html).
 
- - Ethereum's price drop was [hypothesized to be from growing uncertainty about the future of the project, caused from multiple hard forks](https://www.coindesk.com/ethereums-price-woes-continue-digital-currency-hits-9-month-low).
+ - Ethereum's price drop was hypothesized to be from [the growing uncertainty about the future of the project, caused from multiple hard forks](https://www.coindesk.com/ethereums-price-woes-continue-digital-currency-hits-9-month-low).
 
  - From these lows to [their eventual peaks](https://github.com/milan102/Cryptocurrency-Data-Analysis/blob/master/analysis/peaks/peaks.md), the increase was roughly: *100x* for Bitcoin, *244x* for Ethereum, and *128x* for Litecoin.
 
