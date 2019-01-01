@@ -5,6 +5,7 @@ Data analysis and visualization of Coinbase Pro's (previously GDAX) main coins: 
 
 ## Articles
 1. [Peaks](https://github.com/milan102/Cryptocurrency-Data-Analysis/blob/master/analysis/peaks/peaks.md)
+2. [Lows](https://github.com/milan102/Cryptocurrency-Data-Analysis/blob/master/analysis/lows/lows.md)
 
 
 ## Notes
