@@ -21,8 +21,8 @@ SELECT *, datetime(time, 'unixepoch', 'localtime') as date
         GROUP BY market)
 ```
 
-market | date (PST) | high
------- | ---------- | ----
+market | date (PST) | high (USD)
+------ | ---------- | ----------
 BTC-USD | 2017-12-17 04:36:00 | $19,891.99
 ETH-USD | 2018-01-13 13:03:00 | $1,419.96
 LTC-USD | 2017-12-12 06:11:00 | $420.00
